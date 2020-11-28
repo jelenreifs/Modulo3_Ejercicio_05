@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+//import nombres from './nombres';
+import React, { useState } from 'react';
+const array = ["Ander","Elena","Diego"]
+
 
 function App() {
+
+  const [contador, setContador] = useState(0);
+  
+  const otroNombre = () => {
+      if (contador === 2) {
+        setContador(0)
+      } else { 
+        setContador(contador + 1)
+      }
+    }
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <>
+        <h1>{array[contador]}</h1>  
+        <button onClick={otroNombre}>Otro Nombre</button>
+      </>
+    )
 }
 
 export default App;
